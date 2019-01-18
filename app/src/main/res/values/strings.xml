@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WeatherForecast</string>
+    <string name="Weater">Погода</string>
 </resources>
