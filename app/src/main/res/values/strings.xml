@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">WeatherForecast</string>
-    <string name="weater">Погода</string>
+    <string name="title_weather_forecast">Прогноз погоды</string>
+    <string name="command_know_it">Узнать</string>
+    <string name="name_city_moscow">Москва</string>
+    <string name="title_date">Дата:</string>
+    <string name="title_temperature">Темперaтура:</string>
+    <string name="title_precipitation">Осадки:</string>
 </resources>
