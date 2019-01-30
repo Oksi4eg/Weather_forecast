@@ -21,9 +21,10 @@ public class CityWeather extends AppCompatActivity {
     String[] precipitation = {"ясно", "облачно", "снег", "дождь"};
     int precipitationItem = new Random().nextInt(precipitation.length) + 1;
     String precipitationInCity = precipitation[precipitationItem];
-    String temperatureValue = String.valueOf(temperature + " °C");
+    String temperatureValue = String.valueOf(temperature + "°C");
     String windValue = String.valueOf(wind + " м/с");
     String humidityValue = String.valueOf(humidity + " %");
+    private static String cityName;
 
 
     @Override
@@ -33,7 +34,7 @@ public class CityWeather extends AppCompatActivity {
 
         TextView cityNameTW = findViewById(R.id.city_name_text);
         Intent intent = getIntent();
-        String cityName = intent.getStringExtra("cityName");
+        cityName = intent.getStringExtra("cityName");
         cityNameTW.setText(cityName);
 
 

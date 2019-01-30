@@ -43,7 +43,7 @@ public class MainActivity<checkedTemp, Int> extends AppCompatActivity implements
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (temperature.isChecked()) {
-                    checkedTemp = true;
+                    checkedTemp = isChecked;
                 }
             }
         });
@@ -53,7 +53,7 @@ public class MainActivity<checkedTemp, Int> extends AppCompatActivity implements
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (wind.isChecked()) {
-                    checkedWind=true;
+                    checkedWind=isChecked;
                 }
             }
         });
@@ -64,7 +64,7 @@ public class MainActivity<checkedTemp, Int> extends AppCompatActivity implements
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (precipitation.isChecked()) {
-                    checkedPrec = true;
+                    checkedPrec = isChecked;
                 }
             }
         });
@@ -74,7 +74,7 @@ public class MainActivity<checkedTemp, Int> extends AppCompatActivity implements
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (humidity.isChecked()) {
-                    checkedHum = true;
+                    checkedHum = isChecked;
                 }
             }
         });
