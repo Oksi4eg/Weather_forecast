@@ -8,26 +8,35 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.oksana.trubina.weatherforecast.R;
 
 public class MainActivity<checkedTemp, Int> extends AppCompatActivity implements View.OnClickListener {
 
-    String[] cityNames;
-    String resultCityName;
-    ListView cities;
-    String statusTemp;
+    public static String selectedMode = "day";
+    public String[] cityNames;
+    public String resultCityName;
+    public ListView cities;
+    public String statusTemp;
     public Boolean checkedTemp = false;
     public Boolean checkedWind = false;
     public Boolean checkedHum = false;
-    public Boolean checkedPrec=false;
+    public Boolean checkedPrec = false;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        Button night = findViewById(R.id.button_night_mode);
+        Button day = findViewById(R.id.button_day_mode);
+        night.setOnClickListener(checkMode);
+        day.setOnClickListener(checkMode);
+
         ListView cities = findViewById(R.id.lv_cities);
         cities.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         ArrayAdapter<CharSequence> adapterCityList = ArrayAdapter.createFromResource(MainActivity.this,
@@ -47,18 +56,18 @@ public class MainActivity<checkedTemp, Int> extends AppCompatActivity implements
                 }
             }
         });
-        final CheckBox wind= findViewById(R.id.checkbox_wind);
+        final CheckBox wind = findViewById(R.id.checkbox_wind);
         wind.setChecked(false);
         wind.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (wind.isChecked()) {
-                    checkedWind=isChecked;
+                    checkedWind = isChecked;
                 }
             }
         });
 
-        final CheckBox precipitation= findViewById(R.id.checkbox_precipitation);
+        final CheckBox precipitation = findViewById(R.id.checkbox_precipitation);
         precipitation.setChecked(false);
         precipitation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -68,7 +77,7 @@ public class MainActivity<checkedTemp, Int> extends AppCompatActivity implements
                 }
             }
         });
-        final CheckBox humidity= findViewById(R.id.checkbox_humidity);
+        final CheckBox humidity = findViewById(R.id.checkbox_humidity);
         humidity.setChecked(false);
         humidity.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -85,11 +94,33 @@ public class MainActivity<checkedTemp, Int> extends AppCompatActivity implements
 
     }
 
+    View.OnClickListener checkMode = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            LinearLayout chooseMode = findViewById(R.id.layout_choose_mode);
+            LinearLayout mainScreen = findViewById(R.id.layout_main_screen);
+            switch (v.getId()) {
 
-    @Override
+                case R.id.button_night_mode:
+                     selectedMode = "night";
+                    setTheme(R.style.NightTheme);
+//                    setContentView(R.layout.activity_main);
+                    break;
+                case R.id.button_day_mode:
+                     selectedMode = "day";
+                    break;
+            }
+
+            chooseMode.setVisibility(View.GONE);
+            mainScreen.setVisibility(View.VISIBLE);
+        }
+    };
+
+
     public void onClick(View v) {
         Intent intent = new Intent(MainActivity.this, CityWeather.class);
 //        resultCityName = cityNames[cities.getCheckedItemPosition()];
+        intent.putExtra("selectedMode",selectedMode);
         intent.putExtra("cityName", "Все равно Москва");
         intent.putExtra("checkedTem", checkedTemp);
         intent.putExtra("checkedWind", checkedWind);

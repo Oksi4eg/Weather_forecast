@@ -1,113 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="10"
     tools:context=".Screens.Screens.MainActivity">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/layout_choose_mode"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20sp"
-        android:gravity="center"
-        android:text="@string/title_choose_indicators"
-        android:textSize="30sp" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/colorNightBackGround"
+        android:orientation="vertical"
+        android:weightSum="3">
 
         <TextView
+            style="@style/TextTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="@string/choose_mode" />
+
+        <Button
+            android:id="@+id/button_night_mode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/headline_temperature"
-            android:textSize="20sp" />
+            android:text="@string/night_mode" />
 
-        <CheckBox
-            android:id="@+id/checkbox_temperature"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_day_mode"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end" />
-    </FrameLayout>
+            android:text="@string/day_mode" />
 
-    <FrameLayout
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_main_screen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
 
         <TextView
+            style="@style/TextTitleStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/headline_humidity"
-            android:textSize="20sp" />
+            android:text="@string/title_choose_indicators" />
 
-        <CheckBox
-            android:id="@+id/checkbox_humidity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end" />
-    </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <TextView
+                style="@style/TextStandardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/headline_temperature" />
+
+            <CheckBox
+                android:id="@+id/checkbox_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/TextStandardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/headline_humidity" />
+
+            <CheckBox
+                android:id="@+id/checkbox_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/TextStandardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/headline_precipitation" />
+
+            <CheckBox
+                android:id="@+id/checkbox_precipitation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/TextStandardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/headline_wind" />
+
+            <CheckBox
+                android:id="@+id/checkbox_wind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end" />
+        </FrameLayout>
 
         <TextView
+            style="@style/TextTitleStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/headline_precipitation"
-            android:textSize="20sp" />
+            android:text="@string/title_choose_city" />
 
-        <CheckBox
-            android:id="@+id/checkbox_precipitation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
+        <Button
+            android:id="@+id/button_know_the_weather"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/headline_wind"
-            android:textSize="20sp" />
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:text="@string/command_know_it" />
 
-        <CheckBox
-            android:id="@+id/checkbox_wind"
-            android:layout_width="wrap_content"
+
+        <ListView
+            android:id="@+id/lv_cities"
+            style="@style/TextStandardStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end" />
-    </FrameLayout>
+            tools:listitem="@tools:sample/cities">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="@string/title_choose_city"
-        android:textSize="30sp" />
+        </ListView>
 
-    <Button
-        android:id="@+id/button_know_the_weather"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:gravity="center"
-        android:text="@string/command_know_it" />
-
-
-    <ListView
-        android:id="@+id/lv_cities"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@tools:sample/cities">
-
-    </ListView>
-
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>
 
 

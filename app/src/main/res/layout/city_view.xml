@@ -12,9 +12,7 @@
         android:id="@+id/city_name_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        style="@style/TextTitleStyle" />
 
     <ImageView
         android:id="@+id/city_picture"
@@ -33,12 +31,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/headline_temperature"
-            android:textSize="20sp" />
+            style="@style/TextStandardStyle"/>
 
         <TextView
             android:id="@+id/criteria_value_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/TextStandardStyle"
             android:layout_gravity="end" />
     </FrameLayout>
 
@@ -51,12 +50,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/headline_humidity"
-            android:textSize="20sp" />
+            style="@style/TextStandardStyle" />
 
         <TextView
             android:id="@+id/criteria_value_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/TextStandardStyle"
             android:layout_gravity="end" />
     </FrameLayout>
 
@@ -69,13 +69,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/headline_precipitation"
-            android:textSize="20sp" />
+            style="@style/TextStandardStyle" />
 
         <TextView
             android:id="@+id/criteria_value_precipitation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end" />
+            android:layout_gravity="end"
+            style="@style/TextStandardStyle"/>
     </FrameLayout>
 
     <FrameLayout
@@ -87,13 +88,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/headline_wind"
-            android:textSize="20sp" />
+            style="@style/TextStandardStyle" />
 
         <TextView
             android:id="@+id/criteria_value_wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end" />
+            android:layout_gravity="end"
+            style="@style/TextStandardStyle"/>
     </FrameLayout>
 
 

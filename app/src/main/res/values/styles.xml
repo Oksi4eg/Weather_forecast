@@ -8,4 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="NightTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorNightBackGround</item>
+        </style>
+
+
+    <style name="TextStandardStyle" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorMainText</item>
+    </style>
+
+    <style name="TextTitleStyle" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">30sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorTitlesText</item>
+        <item name="android:layout_marginBottom">20sp</item>
+    </style>
 </resources>
