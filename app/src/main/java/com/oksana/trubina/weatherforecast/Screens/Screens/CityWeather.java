@@ -24,16 +24,23 @@ public class CityWeather extends AppCompatActivity {
     String temperatureValue = String.valueOf(temperature + "°C");
     String windValue = String.valueOf(wind + " м/с");
     String humidityValue = String.valueOf(humidity + " %");
-    private static String cityName;
+    public static String cityName;
+    public static String selectedMode;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        selectedMode = getIntent().getStringExtra("selectedMode");
+        if (selectedMode.equals("night")) {
+            setTheme(R.style.NightTheme);
+        }
         setContentView(R.layout.city_view);
+        Intent intent = getIntent();
+
+
 
         TextView cityNameTW = findViewById(R.id.city_name_text);
-        Intent intent = getIntent();
         cityName = intent.getStringExtra("cityName");
         cityNameTW.setText(cityName);
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WeatherForecast</string>
+    <string name="title_weather_forecast">Прогноз погоды</string>
+    <string name="title_choose_indicators">Выберите показатели:</string>
+    <string name="title_choose_city">Выберите город:</string>
+    <string name="headline_date">Дата</string>
+    <string name="headline_temperature">Темперaтура</string>
+    <string name="headline_precipitation">Осадки</string>
+    <string name="headline_humidity">Влажность</string>
+    <string name="headline_wind">Ветер</string>
+    <string name="command_know_it">Узнать</string>
+    <string name="choose_mode">Выбери режим:</string>
+    <string name="night_mode">Ночной</string>
+    <string name="day_mode">Дневной</string>
+
+
+    <string-array name="cities">
+        <item name="Moscow">Москва</item>
+        <item name="Spb">Санкт-Петербург</item>
+        <item name="Samara">Самара</item>
+        <item name="Saransk">Саранск</item>
+        <item name="N_novgorod">Нижний Новгород</item>
+        <item name="Kaliningrad">Калининград</item>
+        <item name="Kazan">Казань</item>
+        <item name="Ekat">Екатеринбург</item>
+        <item name="Volgograd">Волгоград</item>
+        <item name="Sochi">Сочи</item>
+        <item name="Rostov_na_donu">Ростов-на-дону</item>
+    </string-array>
+
+</resources>
